@@ -4,53 +4,15 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface ServiceDetailProps {
-  service?: {
-    id: string
-    title: string
-    description: string
-    icon: string
-    category: string
-    image: string
-    tagline: string
-    overview: string
-    benefits: string[]
-    features: {
-      title: string
-      description: string
-      icon: string
-    }[]
-    process: {
-      step: string
-      title: string
-      description: string
-    }[]
-    pricing: {
-      name: string
-      price: string
-      description: string
-      features: string[]
-      popular?: boolean
-    }[]
-    faqs: {
-      question: string
-      answer: string
-    }[]
-    caseStudies: {
-      title: string
-      client: string
-      result: string
-      image: string
-    }[]
-  }
-}
-
-export default function ServiceDetailPage({ service: propService }: ServiceDetailProps) {
+export default function ServiceDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const [activeFaq, setActiveFaq] = useState<number | null>(0)
-  const [selectedPlan, setSelectedPlan] = useState(1)
 
-  // Dummy data for Strategic Marketing service
-  const dummyService = {
+  // Service data
+  const service = {
     id: 'strategic-marketing',
     title: 'Strategic Marketing',
     description: 'Data-driven marketing strategies that deliver measurable results and drive sustainable business growth.',
@@ -216,8 +178,6 @@ export default function ServiceDetailPage({ service: propService }: ServiceDetai
       },
     ]
   }
-
-  const service = propService || dummyService
 
   const relatedServices = [
     {
