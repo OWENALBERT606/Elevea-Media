@@ -1,0 +1,57 @@
+'use client'
+
+import Clients from '@/components/media/clients'
+import CTA from '@/components/media/cta'
+import FAQ from '@/components/media/faq'
+import Footer from '@/components/media/footer'
+import Header from '@/components/media/header'
+import Hero from '@/components/media/hero'
+import LatestBlog from '@/components/media/latest-blog'
+import Portfolio from '@/components/media/portfolio'
+import Services from '@/components/media/services'
+import Team from '@/components/media/team'
+import Testimonials from '@/components/media/testimonials'
+import { useEffect, useRef, useState } from 'react'
+
+export default function Home() {
+  const [scrollElements, setScrollElements] = useState<NodeListOf<Element> | null>(null)
+
+  useEffect(() => {
+    // Get all elements with scroll animation classes
+    const elements = document.querySelectorAll('.scroll-fade-in, .scroll-scale-in')
+    setScrollElements(elements)
+
+    const handleScroll = () => {
+      if (!elements) return
+
+      elements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top
+        const elementVisible = 150
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('visible')
+        }
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    // Trigger once on load
+    handleScroll()
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <main className="min-h-screen bg-background">
+      <Hero />
+      <div className="px-4 sm:px-6 lg:px-8">
+      <Services />
+      <Portfolio />
+      <LatestBlog/>
+      <CTA />
+      <Clients/>
+       <Testimonials />
+      <FAQ/>
+      </div>
+    </main>
+  )
+}

@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 17%; /* #2B2B2B dark gray */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 17%;
+    
+    /* 🔶 Orange as Primary - #D99732 */
+    --primary: 38 64% 53%; /* #D99732 */
+    --primary-foreground: 0 0% 100%; /* white text on orange */
+    
+    --secondary: 0 0% 96%; /* #F5F5F5 off-white */
+    --secondary-foreground: 0 0% 17%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    
+    --accent: 38 64% 53%; /* orange accent */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 38 64% 53%; /* orange highlight */
+    
+    --radius: 0.3rem;
+
+    /* Chart colors */
+    --chart-1: 38 64% 53%; /* orange */
+    --chart-2: 0 0% 17%; /* dark gray */
+    --chart-3: 0 0% 96%; /* off-white */
+    --chart-4: 38 74% 63%; /* lighter orange */
+    --chart-5: 38 54% 43%; /* darker orange */
+  }
+
+  .dark {
+    --background: 0 0% 17%; /* #2B2B2B */
+    --foreground: 0 0% 96%; /* #F5F5F5 */
+    
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 96%;
+    
+    --popover: 0 0% 20%;
+    --popover-foreground: 0 0% 96%;
+    
+    --primary: 38 64% 53%; /* #D99732 orange */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 96%;
+    
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 70%;
+    
+    --accent: 38 64% 53%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 96%;
+    
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 38 64% 53%;
+    
+    --chart-1: 38 64% 53%; /* orange */
+    --chart-2: 0 0% 96%; /* off-white */
+    --chart-3: 0 0% 50%; /* mid gray */
+    --chart-4: 38 74% 63%; /* lighter orange */
+    --chart-5: 38 54% 43%; /* darker orange */
+  }
+}
+
+ 
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* From Uiverse.io by SchawnnahJ */
+.loader {
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+  transform: rotate(165deg);
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  transform: translate(-50%, -50%);
+}
+
+.loader:before {
+  animation: before8 2s infinite;
+}
+
+.loader:after {
+  animation: after6 2s infinite;
+}
+
+@keyframes before8 {
+  0% {
+    width: 0.5em;
+    box-shadow: 1em -0.5em rgba(217, 151, 50, 0.75),
+      -1em 0.5em rgba(245, 245, 245, 0.75);
+  }
+
+  35% {
+    width: 2.5em;
+    box-shadow: 0 -0.5em rgba(217, 151, 50, 0.75),
+      0 0.5em rgba(245, 245, 245, 0.75);
+  }
+
+  70% {
+    width: 0.5em;
+    box-shadow: -1em -0.5em rgba(217, 151, 50, 0.75),
+      1em 0.5em rgba(245, 245, 245, 0.75);
+  }
+
+  100% {
+    box-shadow: 1em -0.5em rgba(217, 151, 50, 0.75),
+      -1em 0.5em rgba(245, 245, 245, 0.75);
+  }
+}
+
+@keyframes after6 {
+  0% {
+    height: 0.5em;
+    box-shadow: 0.5em 1em rgba(43, 43, 43, 0.75),
+      -0.5em -1em rgba(217, 151, 50, 0.75);
+  }
+
+  35% {
+    height: 2.5em;
+    box-shadow: 0.5em 0 rgba(43, 43, 43, 0.75),
+      -0.5em 0 rgba(217, 151, 50, 0.75);
+  }
+
+  70% {
+    height: 0.5em;
+    box-shadow: 0.5em -1em rgba(43, 43, 43, 0.75),
+      -0.5em 1em rgba(217, 151, 50, 0.75);
+  }
+
+  100% {
+    box-shadow: 0.5em 1em rgba(43, 43, 43, 0.75),
+      -0.5em -1em rgba(217, 151, 50, 0.75);
+  }
+}
+
+.loader {
+  position: absolute;
+  top: calc(50% - 1.25em);
+  left: calc(50% - 1.25em);
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
