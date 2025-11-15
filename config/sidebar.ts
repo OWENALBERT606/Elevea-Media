@@ -16,6 +16,7 @@ import {
   Settings,
   Users,
   Users2,
+  Users2Icon,
 } from "lucide-react";
 
 export interface ISidebarLink {
@@ -70,50 +71,20 @@ export const sidebarLinks: ISidebarLink[] = [
       },
     ],
   },
-  // {
-  //   title: "Inventory",
-  //   icon: BaggageClaim,
-  //   dropdown: true,
-  //   href: "/dashboard/inventory/products",
-  //   permission: "products.read",
-  //   dropdownMenu: [
-  //     {
-  //       title: "Categories",
-  //       href: "/dashboard/inventory/categories",
-  //       permission: "categories.read",
-  //     },
-  //     {
-  //       title: "Products",
-  //       href: "/dashboard/inventory/products",
-  //       permission: "products.read",
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: "Sales",
-  //   icon: CircleDollarSign,
-  //   dropdown: true,
-  //   href: "/dashboard/sales",
-  //   permission: "sales.read",
-  //   dropdownMenu: [
-  //     {
-  //       title: "Sales",
-  //       href: "/dashboard/sales",
-  //       permission: "sales.read",
-  //     },
-  //     {
-  //       title: "Customers",
-  //       href: "/dashboard/sales/customers",
-  //       permission: "customers.read",
-  //     },
-  //   ],
-  // },
+  
   {
     title: "Blogs",
     icon: Book,
     dropdown: false,
     href: "/dashboard/blogs",
     permission: "blogs.read",
+  },
+  {
+    title: "Team",
+    icon: Users2Icon,
+    dropdown: false,
+    href: "/dashboard/team",
+    permission: "team.read",
   },
   {
     title: "Parishes",

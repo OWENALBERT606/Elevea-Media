@@ -159,11 +159,11 @@ async function seedDatabase() {
 
     const adminUser = await db.user.create({
       data: {
-        email: "admin@admin.com",
+        email: "info@eleveamedia.com",
         name: "System Admin",
         firstName: "System",
         lastName: "Admin",
-        phone: "1234567890",
+        phone: "0706656262",
         password: hashedAdminPassword,
         roles: {
           connect: { id: adminRole.id },

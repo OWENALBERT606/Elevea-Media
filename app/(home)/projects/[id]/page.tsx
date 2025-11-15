@@ -138,7 +138,7 @@ export default function ProjectDetailPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-[#2B2B2B] text-white py-12 md:py-20 overflow-hidden">
+      <section className="relative  bg-[#2B2B2B] text-white py-12 md:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[#D99732] rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D99732] rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>

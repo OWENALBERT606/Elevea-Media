@@ -214,7 +214,7 @@ export default function OurWorkPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-background -mt-16 relative z-10">
+      <section className="py-1  px-4 md:px-8 lg:px-12 bg-background -mt-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
@@ -235,7 +235,7 @@ export default function OurWorkPage() {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 bg-background">
+      <section className="py-12 px-4 md:px-8 lg:px-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
@@ -256,7 +256,7 @@ export default function OurWorkPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-12 bg-background">
+      <section className="py-12  px-4 md:px-8 lg:px-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
@@ -330,7 +330,7 @@ export default function OurWorkPage() {
       </section>
 
       {/* Featured Case Study */}
-      <section className="py-20 bg-card">
+      <section className="py-8  px-4 md:px-8 lg:px-12 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-[#D99732]/20 border border-[#D99732] rounded-full mb-6">
@@ -481,7 +481,7 @@ export default function OurWorkPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#2B2B2B] text-white relative overflow-hidden">
+      <section className="py-12  px-4 md:px-8 lg:px-12 bg-[#2B2B2B] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#D99732] rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D99732] rounded-full blur-3xl"></div>

@@ -55,6 +55,16 @@ export const permissions: ModulePermissions[] = [
     },
   },
   {
+    display: "Team Members",
+    name: "team",
+    permissions: {
+      create: "team.create",
+      read: "team.read",
+      update: "team.update",
+      delete: "team.delete",
+    },
+  },
+  {
     display: "Villages",
     name: "villages",
     permissions: {
