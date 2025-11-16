@@ -148,6 +148,10 @@ export async function getBlogById(id: string) {
         where: {
           id,
         },
+        include: {
+          category: true,
+          comments:true
+        }
       });
 
       return blog;
