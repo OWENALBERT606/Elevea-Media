@@ -30,6 +30,7 @@ import { deletePromise } from "@/actions/promise";
 import { deleteMember } from "@/actions/members";
 import { deleteNosigaki } from "@/actions/nosigaki";
 import { deleteVillage } from "@/actions/villages";
+import { deleteTeamMember } from "@/actions/team";
 
 type ActionColumnProps = {
   row: any;
@@ -56,6 +57,12 @@ export default function ActionColumn({
       } else if (model === "blog") {
         const res = await deleteBlogById(id);
         if (res?.ok) {
+          window.location.reload();
+        }
+        toast.success(`${model} Deleted Successfully`);
+      } else if (model === "team") {
+        const res = await deleteTeamMember(id);
+        if (res?.success) {
           window.location.reload();
         }
         toast.success(`${model} Deleted Successfully`);

@@ -57,11 +57,11 @@ export default function LoginForm() {
     }
   }
   return (
-    <div className="w-full lg:grid h-screen lg:min-h-[600px] lg:grid-cols-2 relative ">
+    <div className="w-full lg:grid h-screen lg:min-h-[600px] lg:grid-cols-1 relative ">
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[400px] gap-6 mt-10 md:mt-0">
           <div className="absolute left-1/3 top-14 md:top-5 md:left-5">
-            <Logo />
+            <Link href={"/"} className="text-slate-100 font-semibold bg-slate-800 px-4 py-2 rounded-xl">Home</Link>
           </div>
           <div className="grid gap-2  mt-10 md:mt-0">
             <h1 className="text-3xl font-bold">Login to your Account</h1>
@@ -111,9 +111,6 @@ export default function LoginForm() {
             </p>
           </div>
         </div>
-      </div>
-      <div className=" bg-muted relative]">
-        <CustomCarousel />
       </div>
     </div>
   );

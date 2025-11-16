@@ -13,13 +13,18 @@ export default function ImageColumn({
   // console.log(imageUrl);
   return (
     <div className="shrink-0">
-      <Image
+                      <img
+                src={imageUrl ?? "/placeholder.png"}
+                alt={`${accessorKey}`}
+                className="h-16 w-16 rounded-full object-cover border"
+              />
+      {/* <Image
         alt={`${accessorKey}`}
         className="aspect-square rounded-md object-cover"
         height="50"
         src={imageUrl ?? "/placeholder.png"}
         width="50"
-      />
+      /> */}
     </div>
   );
 }
