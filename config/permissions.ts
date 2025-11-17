@@ -106,6 +106,16 @@ export const permissions: ModulePermissions[] = [
     },
   },
   {
+    display: "Clients",
+    name: "clients",
+    permissions: {
+      create: "clients.create",
+      read: "clients.read",
+      update: "clients.update",
+      delete: "clients.delete",
+    },
+  },
+  {
     display: "Mp'omurro",
     name: "mpomurro",
     permissions: {

@@ -3,19 +3,10 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-export default function Clients() {
+export default function Clients({clients}:{clients:any}) {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
 
-  const clients = [
-    { name: 'TechCorp', logo: '/media/gotv_website_preview_thumbnail.png' },
-    { name: 'InnovateLabs', logo: '/media/gotv_website_preview_thumbnail.png' },
-    { name: 'GrowthHub', logo: '/media/gotv_website_preview_thumbnail.png' },
-    { name: 'DigitalFirst', logo: '/media/gotv_website_preview_thumbnail.png' },
-    { name: 'BrandMasters', logo: '/media/gotv_website_preview_thumbnail.png' },
-    { name: 'MarketLeaders', logo: '/media/gotv_website_preview_thumbnail.png' },
-    { name: 'CreativeMinds', logo:'/media/gotv_website_preview_thumbnail.png' },
-    { name: 'StrategyPro', logo: '/media/gotv_website_preview_thumbnail.png' },
-  ]
+
 
   return (
     <section className="py-8 bg-background relative overflow-hidden">
@@ -43,13 +34,13 @@ export default function Clients() {
             
             {/* Scrolling logos */}
             <div className="flex animate-scroll">
-              {[...clients, ...clients].map((client, index) => (
+              {clients?.map((client:any, index:any) => (
                 <div
                   key={index}
                   className="flex-shrink-0 mx-8 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110"
                 >
                   <Image
-                    src={client.logo}
+                    src={client.imageUrl}
                     alt={client.name}
                     width={160}
                     height={80}

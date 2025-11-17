@@ -87,6 +87,13 @@ export const sidebarLinks: ISidebarLink[] = [
     permission: "team.read",
   },
   {
+    title: "Clients",
+    icon: Users2Icon,
+    dropdown: false,
+    href: "/dashboard/clients",
+    permission: "clients.read",
+  },
+  {
     title: "Parishes",
     icon: House,
     dropdown: false,
