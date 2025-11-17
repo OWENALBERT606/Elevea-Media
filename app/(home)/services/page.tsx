@@ -1,132 +1,17 @@
+
+
+
+
 'use client'
 
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { categories, services } from '@/lib/lib'
 
 export default function ServicesPage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState('all')
-
-  const services = [
-    {
-      id: 1,
-      icon: '🎯',
-      title: 'Strategic Marketing',
-      shortDesc: 'Data-driven marketing strategies that deliver measurable results',
-      description: 'Develop comprehensive marketing strategies tailored to your business goals. We analyze market trends, competitor strategies, and customer behavior to create campaigns that drive growth and maximize ROI.',
-      features: [
-        'Market Research & Analysis',
-        'Competitor Analysis',
-        'Marketing Strategy Development',
-        'Campaign Planning & Execution',
-        'Performance Analytics',
-        'ROI Optimization'
-      ],
-      image: '/media/121758.jpg',
-      category: 'marketing',
-      price: 'From $2,500/month'
-    },
-    {
-      id: 2,
-      icon: '🎨',
-      title: 'Creative Design',
-      shortDesc: 'Stunning visual designs that captivate and convert',
-      description: 'Create compelling visual identities and designs that resonate with your audience. From logos to complete brand systems, we bring your vision to life with creativity and precision.',
-      features: [
-        'Brand Identity Design',
-        'Logo & Visual Assets',
-        'Marketing Collateral',
-        'UI/UX Design',
-        'Print & Digital Design',
-        'Design System Development'
-      ],
-      image: '/media/121758.jpg',
-      category: 'design',
-      price: 'From $1,500/project'
-    },
-    {
-      id: 3,
-      icon: '📊',
-      title: 'Brand Consultation',
-      shortDesc: 'Expert guidance to strengthen your brand positioning',
-      description: 'Strengthen your brand positioning and market presence with expert consultation. We help you define your brand story, values, and messaging to stand out in crowded markets.',
-      features: [
-        'Brand Strategy Development',
-        'Brand Positioning',
-        'Messaging Framework',
-        'Brand Guidelines',
-        'Market Positioning Analysis',
-        'Brand Evolution Planning'
-      ],
-      image: '/media/121758.jpg',
-      category: 'consulting',
-      price: 'From $3,000/month'
-    },
-    {
-      id: 4,
-      icon: '💼',
-      title: 'Business Strategy',
-      shortDesc: 'Custom solutions for your unique business challenges',
-      description: 'Overcome business challenges with tailored strategic solutions. We work closely with you to identify opportunities, optimize operations, and drive sustainable growth.',
-      features: [
-        'Business Model Innovation',
-        'Growth Strategy',
-        'Operational Efficiency',
-        'Strategic Planning',
-        'Market Entry Strategy',
-        'Business Transformation'
-      ],
-      image: '/media/121758.jpg',
-      category: 'consulting',
-      price: 'From $4,000/month'
-    },
-    {
-      id: 5,
-      icon: '📱',
-      title: 'Digital Solutions',
-      shortDesc: 'Comprehensive digital services for modern businesses',
-      description: 'Accelerate your online presence with comprehensive digital solutions. From website development to social media management, we cover all aspects of your digital ecosystem.',
-      features: [
-        'Website Development',
-        'E-commerce Solutions',
-        'Social Media Management',
-        'SEO & SEM',
-        'Email Marketing',
-        'Digital Advertising'
-      ],
-      image: '/media/121758.jpg',
-      category: 'digital',
-      price: 'From $2,000/month'
-    },
-    {
-      id: 6,
-      icon: '🚀',
-      title: 'Growth Acceleration',
-      shortDesc: 'Proven methodologies to scale your business rapidly',
-      description: 'Scale your business rapidly with proven growth methodologies. We implement data-driven strategies and cutting-edge techniques to accelerate your growth trajectory.',
-      features: [
-        'Growth Hacking Strategies',
-        'Conversion Optimization',
-        'Customer Acquisition',
-        'Retention Strategies',
-        'A/B Testing & Analytics',
-        'Scaling Infrastructure'
-      ],
-      image: '/media/121758.jpg',
-      category: 'growth',
-      price: 'From $3,500/month'
-    },
-  ]
-
-  const categories = [
-    { id: 'all', name: 'All Services' },
-    { id: 'marketing', name: 'Marketing' },
-    { id: 'design', name: 'Design' },
-    { id: 'consulting', name: 'Consulting' },
-    { id: 'digital', name: 'Digital' },
-    { id: 'growth', name: 'Growth' },
-  ]
 
   const process = [
     {
@@ -225,7 +110,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-card border-b border-muted">
+      <section className="py-12 px-4 md:px-8 lg:px-12 bg-card border-b border-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -246,7 +131,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-background">
+      <section id="services" className="py-12 px-4 md:px-8 lg:px-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-foreground">What We Offer</h2>
@@ -257,7 +142,7 @@ export default function ServicesPage() {
 
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((category) => (
+            {categories.map((category:any) => (
               <button
                 key={category.id}
                 onClick={() => setActiveTab(category.id)}
@@ -274,7 +159,7 @@ export default function ServicesPage() {
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredServices.map((service, index) => (
+            {filteredServices.map((service:any, index:any) => (
               <div
                 key={service.id}
                 className="group relative overflow-hidden rounded-2xl bg-card border border-muted hover:border-[#D99732] transition-all duration-500 hover:shadow-2xl hover:shadow-[#D99732]/20 cursor-pointer"
@@ -303,11 +188,11 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Price Tag */}
-                  <div className="absolute top-6 right-6">
+                  {/* <div className="absolute top-6 right-6">
                     <span className="px-4 py-2 bg-[#D99732] text-white text-sm font-bold rounded-full shadow-lg">
                       {service.price}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Content */}
@@ -321,7 +206,7 @@ export default function ServicesPage() {
 
                   {/* Features List */}
                   <ul className="space-y-2 mb-6">
-                    {service.features.slice(0, 4).map((feature, idx) => (
+                    {service.features.slice(0, 4).map((feature:any, idx:any) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <svg className="w-5 h-5 text-[#D99732] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -332,12 +217,15 @@ export default function ServicesPage() {
                   </ul>
 
                   {/* CTA Button */}
-                  <button className="w-full px-6 py-3 bg-[#D99732] text-white rounded-full font-semibold hover:bg-[#D99732]/90 transition-all duration-300 hover:shadow-lg hover:shadow-[#D99732]/50 transform hover:scale-105 inline-flex items-center justify-center gap-2">
+                  <Link 
+                    href={`/services/${service.slug}`}
+                    className="w-full px-6 py-3 bg-[#D99732] text-white rounded-full font-semibold hover:bg-[#D99732]/90 transition-all duration-300 hover:shadow-lg hover:shadow-[#D99732]/50 transform hover:scale-105 inline-flex items-center justify-center gap-2"
+                  >
                     Learn More
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Bottom accent line */}
@@ -351,7 +239,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-card">
+      <section className="py-12 px-4 md:px-8 lg:px-12 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">Our Process</h2>
@@ -391,7 +279,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-background">
+      <section className="py-12 px-4 md:px-8 lg:px-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">Client Success Stories</h2>
@@ -435,7 +323,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#2B2B2B] text-white relative overflow-hidden">
+      <section className="py-12 px-4 md:px-8 lg:px-12 bg-[#2B2B2B] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#D99732] rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D99732] rounded-full blur-3xl"></div>
