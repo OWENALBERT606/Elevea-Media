@@ -137,6 +137,19 @@ model Client {
 }
 
 
+model Testimonial {
+  id        String   @id @default(cuid())
+  text      String
+  author    String
+  title     String
+  company   String
+  rating    Int
+  imageUrl  String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 
 
 

@@ -4,6 +4,7 @@ import {
   BarChart2,
   BarChart4,
   Book,
+  BookA,
   Cable,
   CheckCheck,
   CircleDollarSign,
@@ -94,40 +95,13 @@ export const sidebarLinks: ISidebarLink[] = [
     permission: "clients.read",
   },
   {
-    title: "Parishes",
-    icon: House,
+    title: "Testimonials",
+    icon: BookA,
     dropdown: false,
-    href: "/dashboard/parishes",
-    permission: "parishes.read",
+    href: "/dashboard/testimonials",
+    permission: "testimonials.read",
   },
-  {
-    title: "Villages",
-    icon: House,
-    dropdown: false,
-    href: "/dashboard/villages",
-    permission: "villages.read",
-  },
-  {
-    title: "Promises",
-    icon: CheckCheck,
-    dropdown: false,
-    href: "/dashboard/promises",
-    permission: "promises.read",
-  },
-  {
-    title: "N'osigaki",
-    icon: Book,
-    dropdown: false,
-    href: "/dashboard/nosigaki",
-    permission: "nosigaki.read",
-  },
-  {
-    title: "Mp'omurro",
-    href: "/dashboard/mpomurro",
-    icon: BarChart2,
-    dropdown: false,
-    permission: "mpomurro.read",
-  },
+
   {
     title: "Members",
     href: "/dashboard/members",
@@ -149,28 +123,5 @@ export const sidebarLinks: ISidebarLink[] = [
     dropdown: false,
     permission: "settings.read",
   },
-  // {
-  //   title: "Reports",
-  //   icon: BarChart4,
-  //   dropdown: true,
-  //   href: "/dashboard/reports/products",
-  //   permission: "reports.read",
-  //   dropdownMenu: [
-  //     {
-  //       title: "Product Report",
-  //       href: "/dashboard/reports/products",
-  //       permission: "reports.read",
-  //     },
-  //     {
-  //       title: "Inventory Report",
-  //       href: "/dashboard/reports/inventory",
-  //       permission: "reports.read",
-  //     },
-  //     {
-  //       title: "Customers Report",
-  //       href: "/dashboard/reports/customers",
-  //       permission: "reports.read",
-  //     },
-  //   ],
-  // },
+ 
 ];

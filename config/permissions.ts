@@ -45,16 +45,6 @@ export const permissions: ModulePermissions[] = [
     },
   },
   {
-    display: "Parishes",
-    name: "parishes",
-    permissions: {
-      create: "parishes.create",
-      read: "parishes.read",
-      update: "parishes.update",
-      delete: "parishes.delete",
-    },
-  },
-  {
     display: "Team Members",
     name: "team",
     permissions: {
@@ -64,26 +54,7 @@ export const permissions: ModulePermissions[] = [
       delete: "team.delete",
     },
   },
-  {
-    display: "Villages",
-    name: "villages",
-    permissions: {
-      create: "villages.create",
-      read: "villages.read",
-      update: "villages.update",
-      delete: "villages.delete",
-    },
-  },
-  {
-    display: "Manifestations",
-    name: "promises",
-    permissions: {
-      create: "promises.create",
-      read: "promises.read",
-      update: "promises.update",
-      delete: "promises.delete",
-    },
-  },
+
   {
     display: "Members",
     name: "members",
@@ -116,15 +87,16 @@ export const permissions: ModulePermissions[] = [
     },
   },
   {
-    display: "Mp'omurro",
-    name: "mpomurro",
+    display: "Testimonials",
+    name: "testimonials",
     permissions: {
-      create: "mpomurro.create",
-      read: "mpomurro.read",
-      update: "mpomurro.update",
-      delete: "mpomurro.delete",
+      create: "testimonials.create",
+      read: "testimonials.read",
+      update: "testimonials.update",
+      delete: "testimonials.delete",
     },
   },
+  
   {
     display: "Settings",
     name: "settings",
@@ -135,26 +107,7 @@ export const permissions: ModulePermissions[] = [
       delete: "settings.delete",
     },
   },
-  {
-    display: "N'osigaki",
-    name: "nosigaki",
-    permissions: {
-      create: "nosigaki.create",
-      read: "nosigaki.read",
-      update: "nosigaki.update",
-      delete: "nosigaki.delete",
-    },
-  },
-  {
-    display: "Blogs",
-    name: "blogs",
-    permissions: {
-      create: "blogs.create",
-      read: "blogs.read",
-      update: "blogs.update",
-      delete: "blogs.delete",
-    },
-  },
+ 
 ];
 
 // Helper function to get all permission strings

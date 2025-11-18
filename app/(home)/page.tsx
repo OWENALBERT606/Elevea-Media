@@ -78,11 +78,24 @@ import Portfolio from "@/components/media/portfolio";
 import Services from "@/components/media/services";
 import Team from "@/components/media/team";
 import Testimonials from "@/components/media/testimonials";
-import { Client } from "@prisma/client";
+import { Blog, Client, Testimonial } from "@prisma/client";
+import { getBlogs } from "@/actions/blogs";
+import { getTestimonials } from "@/actions/testimonials";
 
 export default function Home() {
-  const [clients, setClients] = useState<Client[]>([]);
   const [scrollElements, setScrollElements] = useState<NodeListOf<Element> | null>(null);
+  const [clients, setClients] = useState<Client[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+
+  useEffect(() => {
+  async function loadTestimonials() {
+    const data = await getTestimonials();
+    setTestimonials(data || []);
+  }
+  loadTestimonials();
+}, []);
+
 
   // Fetch clients on mount
   useEffect(() => {
@@ -92,6 +105,18 @@ export default function Home() {
     }
     loadClients();
   }, []);
+
+
+    // Fetch blogs on mount
+  useEffect(() => {
+    async function loadBlogs() {
+      const data = await getBlogs();
+      setBlogs(data || []);
+    }
+    loadBlogs();
+  }, []);
+
+
 
   // Scroll animation
   useEffect(() => {
@@ -116,16 +141,19 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+  console.log(testimonials);
+
   return (
     <main className="min-h-screen bg-background">
       <Hero />
       <div className="px-4 sm:px-6 lg:px-8">
         <Services />
         <Portfolio />
-        <LatestBlog />
+        <LatestBlog blogs={blogs} />
         <CTA />
         <Clients clients={clients} />
-        <Testimonials />
+        <Testimonials testimonials={testimonials} />
         <FAQ />
       </div>
     </main>
