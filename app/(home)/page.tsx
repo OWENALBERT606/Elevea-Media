@@ -78,15 +78,28 @@ import Portfolio from "@/components/media/portfolio";
 import Services from "@/components/media/services";
 import Team from "@/components/media/team";
 import Testimonials from "@/components/media/testimonials";
-import { Blog, Client, Testimonial } from "@prisma/client";
+import { Blog, Client, Project, Testimonial } from "@prisma/client";
 import { getBlogs } from "@/actions/blogs";
 import { getTestimonials } from "@/actions/testimonials";
+import { getProjects } from "@/actions/projects";
 
 export default function Home() {
   const [scrollElements, setScrollElements] = useState<NodeListOf<Element> | null>(null);
   const [clients, setClients] = useState<Client[]>([]);
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
+
+
+   useEffect(() => {
+    async function loadProjects() {
+      const data = await getProjects();
+      setProjects(data || []);
+    }
+
+    loadProjects();
+  }, []);
+
 
   useEffect(() => {
   async function loadTestimonials() {
@@ -149,7 +162,7 @@ export default function Home() {
       <Hero />
       <div className="px-4 sm:px-6 lg:px-8">
         <Services />
-        <Portfolio />
+        <Portfolio projects={projects} />
         <LatestBlog blogs={blogs} />
         <CTA />
         <Clients clients={clients} />

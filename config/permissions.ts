@@ -96,6 +96,16 @@ export const permissions: ModulePermissions[] = [
       delete: "testimonials.delete",
     },
   },
+  {
+    display: "Projects",
+    name: "projects",
+    permissions: {
+      create: "projects.create",
+      read: "projects.read",
+      update: "projects.update",
+      delete: "projects.delete",
+    },
+  },
   
   {
     display: "Settings",

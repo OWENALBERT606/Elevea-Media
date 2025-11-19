@@ -32,6 +32,7 @@ import { deleteNosigaki } from "@/actions/nosigaki";
 import { deleteVillage } from "@/actions/villages";
 import { deleteTeamMember } from "@/actions/team";
 import { deleteClient } from "@/actions/clients";
+import { deleteProject } from "@/actions/projects";
 
 type ActionColumnProps = {
   row: any;
@@ -77,6 +78,12 @@ export default function ActionColumn({
        else if (model === "member") {
         const res = await deleteMember(id);
         if (res?.ok) {
+          window.location.reload();
+        }
+        toast.success(`${model} Deleted Successfully`);
+      } else if (model === "project") {
+        const res = await deleteProject(id);
+        if (res?.success) {
           window.location.reload();
         }
         toast.success(`${model} Deleted Successfully`);

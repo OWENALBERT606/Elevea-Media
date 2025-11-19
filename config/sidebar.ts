@@ -101,6 +101,13 @@ export const sidebarLinks: ISidebarLink[] = [
     href: "/dashboard/testimonials",
     permission: "testimonials.read",
   },
+  {
+    title: "Projects",
+    icon: BookA,
+    dropdown: false,
+    href: "/dashboard/projects",
+    permission: "projects.read",
+  },
 
   {
     title: "Members",
